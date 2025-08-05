@@ -18,6 +18,7 @@ export const auth = betterAuth({
     provider: "pg",
     schema,
   }),
+  // Precisou sinalizar aqui os nomes alterados na tabela
   user: {
     modelName: "userTable",
   },
