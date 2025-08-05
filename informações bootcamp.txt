@@ -32,3 +32,4 @@ npm i better-auth@1.2.12 --> instalação better-auth
 3- Instalar o better-auth cli -> npx @better-auth/cli@1.2.12 generate
 4 - Com o Cli vai gerar as tabelas do user e agora adicionar no schema.ts das suas tabelas
 5 - Depois da um npx drizzle-kit push --> para atualizar as tabelas do banco
+6 - Adicionar o arquivo api/auth/[...all]/route.ts e o auth-client.ts já na documentação
