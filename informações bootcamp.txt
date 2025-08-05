@@ -1,0 +1,26 @@
+
+Criando o Projeto --> npx create-next-app@15.4.1 bewear
+
+Instalar o shadcn ==> npx shadcn@2.9.2 init
+
+npx shadcn@2.9.2 add button
+
+Ordenar as classes do taiwlind com prettier --> npm install -D prettier@3.6.2 prettier-plugin-tailwindcss@0.6.14
+
+Ordenar os imports ==> npm install --save-dev eslint-plugin-simple-import-sort@12.1.1
+
+Arquivo .vscode/settings.json --> Para quando salvar organizar os imports automaticamente
+
+Instalando o ORM drizzle e o drizzle-seed --> npm i drizzle-orm@0.44.2 drizzle-seed@0.3.1 pg@8.16.3 dotenv@17.1.0
+
+Instalando drizzle-kit --> npm i -D drizzle-kit@0.31.4 @types/pg@8.15.4 tsx@4.20.3
+
+db/index.ts --> configuração para o banco de dados
+
+Pegar o schema e criar as tabelas no banco --> npx drizzle-kit push
+
+Popular o banco com o seed --> npx tsx --env-file=.env src/db/seed.ts
+
+npx shadcn@2.9.2 add card form --> adicionando card e formulário
+
+npx shadcn@2.9.2 add input tabs --> adicionando input e tabs
