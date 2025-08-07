@@ -4,6 +4,7 @@ import Image from "next/image";
 import CategorySelector from "@/components/common/category-selector";
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";
+import PatnerBrands from "@/components/common/partner-brands";
 import ProductList from "@/components/common/product-list";
 import { db } from "@/db";
 import { productTable } from "@/db/schema";
@@ -27,15 +28,20 @@ const Home = async () => {
       <Header />
       <div className="space-y-6">
         <div className="px-5">
-          <Image
-            src="/banner-01.png"
-            alt="Leve uma vida com estilo"
-            height={0}
-            width={0}
-            sizes="100vw"
-            className="h-auto w-full"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/banner-01-desktop.jpg"
+            />
+            <img
+              src="/banner-01.png"
+              alt="Descrição da imagem"
+              className="h-auto w-full"
+            />
+          </picture>
         </div>
+
+        <PatnerBrands />
 
         <ProductList products={products} title="Mais vendidos" />
 
@@ -44,14 +50,17 @@ const Home = async () => {
         </div>
 
         <div className="px-5">
-          <Image
-            src="/banner-02.png"
-            alt="Leve uma vida com estilo"
-            height={0}
-            width={0}
-            sizes="100vw"
-            className="h-auto w-full"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/banner-02-desktop.png"
+            />
+            <img
+              src="/banner-02.png"
+              alt="Descrição da imagem"
+              className="h-auto w-full"
+            />
+          </picture>
         </div>
 
         <ProductList products={newlyCreatedProducts} title="Novos produtos" />
