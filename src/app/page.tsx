@@ -57,7 +57,9 @@ const Home = async () => {
               media="(min-width: 768px)"
               srcSet="/banner-02-desktop.png"
             />
-            <img
+            <Image
+              width={300}
+              height={200}
               src="/banner-02.png"
               alt="Descrição da imagem"
               className="h-auto w-full"
