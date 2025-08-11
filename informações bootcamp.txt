@@ -27,6 +27,10 @@ npx shadcn@2.9.2 add input tabs --> adicionando input e tabs
 
 npx shadcn@2.9.2 add sonner --> Para avisos na tela
 
+npx shadcn@2.9.2 add separator --> Para linhas horizontais
+
+npx shadcn@2.9.2 add scroll-area --> para o carrinho ao lado na tela																								
+
 
 -----Autenticação---
 npm i better-auth@1.2.12 --> instalação better-auth
@@ -41,3 +45,7 @@ npm i better-auth@1.2.12 --> instalação better-auth
 
 npx shadcn@2.9.2 add avatar --> para colocar imagens de avatar
 npx shadcn@2.9.2 add sheet --> Para a interação do header abrir e fechar
+npm install @tanstack/react-query@5.83.0 --> faz requisições pelo client side
+
+OBS: Quando a gente utiliza o react-query por volta da aplicação, estamos reenderizando um server component dentro de um client component entretando como ele ta passando como prop
+(children) nesse caso é permitido!
