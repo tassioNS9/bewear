@@ -20,6 +20,7 @@ const PatnerBrands = () => {
                 alt={product.brand}
                 width={35}
                 height={35}
+                style={{width:"auto", height:"auto"}}
                 className="rounded-3xl"
               />
             </Card>

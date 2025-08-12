@@ -24,6 +24,7 @@ const AddToCartButton = ({
         quantity,
       }),
     onSuccess: () => {
+      // Refaz todas as query que tem a chave cart, serve para atualizar a quantidade de produtos no carro por exemplo!
       queryClient.invalidateQueries({ queryKey: ["cart"] });
     },
   });
