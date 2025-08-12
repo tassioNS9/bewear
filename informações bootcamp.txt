@@ -43,6 +43,13 @@ npm i better-auth@1.2.12 --> instalação better-auth
 7 - Configurar o lib/auth.ts para as credenciais de email e senha e  Google
 -------------------------
 
+-- Autenticação com o Google----
+1 - Ir no Google cloud Console para criar o projeto
+2 - Depois vai em Api e services, depois em credentials, em OAuth consent screen, coloca o email de contato, em Audience coloca external
+3 - Depois vai em Create OAuth client
+4- No lugar das Urls colocar o localhost:3000 e no outro localhost:3000/api/auth/callback/google e clica em criar e pega as chaves
+5 - No auth.ts colocar o socialProviders com as chaves do .env
+
 npx shadcn@2.9.2 add avatar --> para colocar imagens de avatar
 npx shadcn@2.9.2 add sheet --> Para a interação do header abrir e fechar
 npm install @tanstack/react-query@5.83.0 --> faz requisições pelo client side
