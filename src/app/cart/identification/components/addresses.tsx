@@ -113,7 +113,7 @@ const Addresses = ({
   };
 
   return (
-    <Card>
+    <Card className="w-full md:w-1/2 lg:w-2/5">
       <CardHeader>
         <CardTitle>Identificação</CardTitle>
       </CardHeader>

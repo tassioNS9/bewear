@@ -24,7 +24,7 @@ const CartSummary = ({
   products,
 }: CartSummaryProps) => {
   return (
-    <Card>
+    <Card className="w-full md:w-1/2 lg:w-2/5">
       <CardHeader>
         <CardTitle>Resumo</CardTitle>
       </CardHeader>
