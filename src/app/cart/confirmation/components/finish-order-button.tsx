@@ -2,6 +2,7 @@
 
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -10,19 +11,24 @@ import {
   DialogContent,
   DialogDescription,
   DialogFooter,
-  DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useFinishOrder } from "@/hooks/mutations/use-finish-order";
 const FinishOrderButton = () => {
   const finisihOrderMutation = useFinishOrder();
+
   const [sucessDialogIsOpen, setSuccessDialogIsOpen] = useState(false);
+
+  const handleFinishOrder = () => {
+    finisihOrderMutation.mutate();
+    setSuccessDialogIsOpen(true);
+  };
   return (
     <>
       <Button
         className="w-full rounded-full"
         size="lg"
-        onClick={() => finisihOrderMutation.mutate()}
+        onClick={handleFinishOrder}
         disabled={finisihOrderMutation.isPending}
       >
         {finisihOrderMutation.isPending ? (
@@ -35,7 +41,7 @@ const FinishOrderButton = () => {
       <Dialog open={sucessDialogIsOpen} onOpenChange={setSuccessDialogIsOpen}>
         <DialogContent>
           <Image
-            src="/ilustration.svg"
+            src="/illustration.svg"
             alt="Pedido realizado com sucesso"
             width={300}
             height={300}
@@ -50,15 +56,16 @@ const FinishOrderButton = () => {
           </DialogDescription>
 
           <DialogFooter>
-            <Button
-              className="rounded-full"
-              size="lg"
-              onClick={() => setSuccessDialogIsOpen(false)}
-            >
+            <Button className="rounded-full" size="lg">
               Ver meus pedidos
             </Button>
-            <Button className="rounded-full" size="lg" variant="outline">
-              Voltar para a loja
+            <Button
+              asChild
+              className="rounded-full"
+              size="lg"
+              variant="outline"
+            >
+              <Link href="/">Voltar para a loja</Link>
             </Button>
           </DialogFooter>
         </DialogContent>

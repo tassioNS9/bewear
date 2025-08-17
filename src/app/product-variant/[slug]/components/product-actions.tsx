@@ -4,6 +4,7 @@ import { MinusIcon, PlusIcon } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+
 import AddToCartButton from "./add-to-cart-button";
 
 interface ProductActionsProps {
@@ -37,12 +38,12 @@ const ProductActions = ({ productVariantId }: ProductActionsProps) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col space-y-4 px-5">
+      <div className="flex flex-col space-y-4 px-5 lg:flex-row lg:space-y-0 lg:space-x-4">
         <AddToCartButton
           productVariantId={productVariantId}
           quantity={quantity}
         />
-        <Button className="rounded-full" size="lg">
+        <Button className="rounded-full lg:w-1/3" size="lg">
           Comprar agora
         </Button>
       </div>

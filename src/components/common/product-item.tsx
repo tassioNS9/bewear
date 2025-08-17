@@ -17,7 +17,7 @@ const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
   return (
     <Link
       href={`/product-variant/${firstVariant.slug}`}
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 lg:h-[400px] lg:min-w-[300px]"
     >
       <Image
         src={firstVariant.imageUrl}
@@ -25,7 +25,7 @@ const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
         sizes="100vw"
         height={0}
         width={0}
-        className="h-auto w-full rounded-3xl"
+        className="w-full rounded-3xl object-cover"
       />
       <div
         className={cn(

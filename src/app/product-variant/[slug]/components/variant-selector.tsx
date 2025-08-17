@@ -25,11 +25,12 @@ const VariantSelector = ({
           }
         >
           <Image
-            width={68}
-            height={68}
+            width={0}
+            height={0}
             src={variant.imageUrl}
             alt={variant.name}
-            className="rounded-xl"
+            sizes="100vw"
+            className="h-[68px] w-[68px] rounded-xl object-fill lg:h-[200px] lg:w-[200px]"
           />
         </Link>
       ))}

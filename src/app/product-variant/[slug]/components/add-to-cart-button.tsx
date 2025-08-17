@@ -30,7 +30,7 @@ const AddToCartButton = ({
   });
   return (
     <Button
-      className="rounded-full"
+      className="rounded-full lg:w-1/3"
       size="lg"
       variant="outline"
       disabled={isPending}
