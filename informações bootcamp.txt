@@ -29,7 +29,9 @@ npx shadcn@2.9.2 add sonner --> Para avisos na tela
 
 npx shadcn@2.9.2 add separator --> Para linhas horizontais
 
-npx shadcn@2.9.2 add scroll-area --> para o carrinho ao lado na tela																								
+npx shadcn@2.9.2 add scroll-area --> para o carrinho ao lado na tela	
+
+npx shadcn@2.9.2 add dialog --> Para criação de avisos e confirmações																							
 
 
 -----Autenticação---
