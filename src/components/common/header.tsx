@@ -22,7 +22,13 @@ export const Header = () => {
   return (
     <header className="flex items-center justify-between p-5">
       <Link href="/">
-        <Image src="/logo.svg" alt="BEWEAR" width={100} height={26.14}  style={{width:"auto", height:"auto"}}  />
+        <Image
+          src="/logo.svg"
+          alt="BEWEAR"
+          width={100}
+          height={26.14}
+          style={{ width: "auto", height: "auto" }}
+        />
       </Link>
 
       <div className="flex items-center gap-3">
@@ -80,7 +86,16 @@ export const Header = () => {
             </div>
           </SheetContent>
         </Sheet>
-        <Cart />
+        {session?.user && (
+          <div className="flex items-center gap-3">
+            <Button asChild variant="outline" size="icon">
+              <Link href="/my-orders">
+                <LogInIcon />
+              </Link>
+            </Button>
+            <Cart />
+          </div>
+        )}
       </div>
     </header>
   );

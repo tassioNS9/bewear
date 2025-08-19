@@ -31,7 +31,11 @@ npx shadcn@2.9.2 add separator --> Para linhas horizontais
 
 npx shadcn@2.9.2 add scroll-area --> para o carrinho ao lado na tela	
 
-npx shadcn@2.9.2 add dialog --> Para criação de avisos e confirmações																							
+npx shadcn@2.9.2 add dialog --> Para criação de avisos e confirmações	
+
+npx shadcn@2.9.2 add accordion --> Para criação de dropdown com setas animadas
+
+npx shadcn@2.9.2 add badge --> 
 
 
 -----Autenticação---
