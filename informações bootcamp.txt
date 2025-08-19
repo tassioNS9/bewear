@@ -52,6 +52,13 @@ npm i better-auth@1.2.12 --> instalação better-auth
 4- No lugar das Urls colocar o localhost:3000 e no outro localhost:3000/api/auth/callback/google e clica em criar e pega as chaves
 5 - No auth.ts colocar o socialProviders com as chaves do .env
 
+-------- Integração com Stripe ---------
+Para as variaveis de ambiente ser acessadas em client component precisamos colocar o NEXT_PUBLIC na frente da variavel NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+1 - npm i stripe@18.4.0 --> instalação do stripe
+2 - Criar a action create-checkout-session
+3 - npm i @stripe/stripe-js@7.8.0
+4 - Realiza as configurações no finish-order-button.tsx
+
 npx shadcn@2.9.2 add avatar --> para colocar imagens de avatar
 npx shadcn@2.9.2 add sheet --> Para a interação do header abrir e fechar
 npm install @tanstack/react-query@5.83.0 --> faz requisições pelo client side
