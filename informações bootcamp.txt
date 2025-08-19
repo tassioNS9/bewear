@@ -58,6 +58,10 @@ Para as variaveis de ambiente ser acessadas em client component precisamos coloc
 2 - Criar a action create-checkout-session
 3 - npm i @stripe/stripe-js@7.8.0
 4 - Realiza as configurações no finish-order-button.tsx
+5 - Cria a rota em stripe/weebook A rota que o stripe chama passando a informação que o pagamento foi aprovado para o pedido
+6 - Agora configurar o weebook no stripe vai em weebooks em setar como ouvinte para chamar o localhost entao precisamos baixar o stripe CLI
+7 - Depois de baixar o executável e configurar na variável de ambiente, da um stripe login , depois stripe listen --forward-to localhost:3000/api/stripe/webhook,
+passando a rota da api vai gerar a chave para colocar no .env
 
 npx shadcn@2.9.2 add avatar --> para colocar imagens de avatar
 npx shadcn@2.9.2 add sheet --> Para a interação do header abrir e fechar
