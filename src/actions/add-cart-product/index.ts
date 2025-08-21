@@ -2,6 +2,7 @@
 
 import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
 import { db } from "@/db";
 import { cartItemTable, cartTable } from "@/db/schema";
@@ -10,11 +11,15 @@ import { auth } from "@/lib/auth";
 import { AddProductToCartSchema, addProductToCartSchema } from "./schema";
 
 export const addProductToCart = async (data: AddProductToCartSchema) => {
-// Verifica se os dados são válidos!
+  // Verifica se os dados são válidos!
   addProductToCartSchema.parse(data);
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+
+  if (!session?.user) {
+    redirect("/authentication");
+  }
 
   // verifica se o usuário está autenticado primeiro
   if (!session?.user) {

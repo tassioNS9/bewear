@@ -67,6 +67,10 @@ Para as variaveis de ambiente ser acessadas em client component precisamos coloc
 7 - Depois de baixar o executável e configurar na variável de ambiente, da um stripe login , depois stripe listen --forward-to localhost:3000/api/stripe/webhook (deve fica rodando),
 passando a rota da api vai gerar a chave para colocar no .env
 
+-- Para Produção no stripe---
+1 - Vamos em webhook e adiciona o evento checkout.session.completed e clica em endpoint de webhook e coloca o endpoint da sua URL
+ex:https://bewear-ten.vercel.app/api/stripe/webhook, vai lhe dar o segred secret e vc joga na vercel como variavel de ambiente como STRIPE_WEBHOOK_SECRET
+
 npx shadcn@2.9.2 add avatar --> para colocar imagens de avatar
 npx shadcn@2.9.2 add sheet --> Para a interação do header abrir e fechar
 npm install @tanstack/react-query@5.83.0 --> faz requisições pelo client side
