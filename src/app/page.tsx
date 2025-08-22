@@ -1,49 +1,35 @@
-import { desc } from "drizzle-orm";
 import Image from "next/image";
 
 import CategorySelector from "@/components/common/category-selector";
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";
-import PatnerBrands from "@/components/common/partner-brands";
 import ProductList from "@/components/common/product-list";
-import { db } from "@/db";
-import { productTable } from "@/db/schema";
+import { getCategories } from "@/data/categories/get";
+import {
+  getNewlyCreatedProducts,
+  getProductsWithVariants,
+} from "@/data/products/get";
 
 const Home = async () => {
-  const products = await db.query.productTable.findMany({
-    with: {
-      variants: true,
-    },
-  });
-  const newlyCreatedProducts = await db.query.productTable.findMany({
-    orderBy: [desc(productTable.createdAt)],
-    with: {
-      variants: true,
-    },
-  });
-  const categories = await db.query.categoryTable.findMany({});
-
+  const [products, newlyCreatedProducts, categories] = await Promise.all([
+    getProductsWithVariants(),
+    getNewlyCreatedProducts(),
+    getCategories(),
+  ]);
   return (
     <>
       <Header />
       <div className="space-y-6">
         <div className="px-5">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet="/banner-01-desktop.jpg"
-            />
-            <Image
-              width={300}
-              height={200}
-              src="/banner-01.png"
-              alt="Descrição da imagem"
-              className="h-auto w-full"
-            />
-          </picture>
+          <Image
+            src="/banner-01.png"
+            alt="Leve uma vida com estilo"
+            height={0}
+            width={0}
+            sizes="100vw"
+            className="h-auto w-full"
+          />
         </div>
-
-        <PatnerBrands />
 
         <ProductList products={products} title="Mais vendidos" />
 
@@ -52,19 +38,14 @@ const Home = async () => {
         </div>
 
         <div className="px-5">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet="/banner-02-desktop.png"
-            />
-            <Image
-              width={300}
-              height={200}
-              src="/banner-02.png"
-              alt="Descrição da imagem"
-              className="h-auto w-full"
-            />
-          </picture>
+          <Image
+            src="/banner-02.png"
+            alt="Leve uma vida com estilo"
+            height={0}
+            width={0}
+            sizes="100vw"
+            className="h-auto w-full"
+          />
         </div>
 
         <ProductList products={newlyCreatedProducts} title="Novos produtos" />
